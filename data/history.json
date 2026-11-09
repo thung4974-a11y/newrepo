@@ -32,5 +32,39 @@
     "is_stattrak": false,
     "stattrak_count": 0,
     "opened_at": "2026-11-09 16:51:19"
+  },
+  {
+    "id": "c0006455",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "banh-mi-pate",
+    "item_name": "Bánh Mì Chả Pate",
+    "rarity": "milspec",
+    "rarity_name": "Món Quốc Dân (Mil-Spec)",
+    "color": "#4b69ff",
+    "image": "🥖",
+    "price_range": "20.000đ - 30.000đ",
+    "wear": "Field-Tested (Đầy đủ rau dưa gia vị)",
+    "float_value": 0.2117,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 16:54:11"
+  },
+  {
+    "id": "94523953",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "ramen-nhat-ban",
+    "item_name": "Mì Ramen Tonkotsu Thịt Chashu",
+    "rarity": "classified",
+    "rarity_name": "Món Hạng Sang (Classified)",
+    "color": "#d32ce6",
+    "image": "🍜",
+    "price_range": "110.000đ - 150.000đ",
+    "wear": "Minimal Wear (Vừa thổi vừa ăn)",
+    "float_value": 0.1082,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 16:54:45"
   }
 ]
