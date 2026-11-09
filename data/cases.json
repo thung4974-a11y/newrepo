@@ -1,0 +1,30 @@
+[
+  {
+    "id": "van-phong",
+    "name": "Hòm Cơm Văn Phòng",
+    "description": "Bộ sưu tập bữa trưa tiêu chuẩn cho anh em công sở: từ cơm bình dân cứu đói đến steak sang chảnh liên hoan.",
+    "icon": "🍱",
+    "badge_color": "#4b69ff"
+  },
+  {
+    "id": "chay-tui",
+    "name": "Hòm Cuối Tháng Cháy Túi",
+    "description": "Dành cho những ngày tài khoản về đáy: bánh mì, mì tôm, xôi xéo. Ngon bổ rẻ vượt qua mùa cạn kiệt.",
+    "icon": "💸",
+    "badge_color": "#eab308"
+  },
+  {
+    "id": "dai-gia",
+    "name": "Hòm Ngày Nhận Lương",
+    "description": "Tiền vừa về tài khoản! Tự thưởng cho bản thân bằng bò wagyu, sashimi, lẩu buffet ngập tràn topping.",
+    "icon": "💎",
+    "badge_color": "#eb4b4b"
+  },
+  {
+    "id": "healthy",
+    "name": "Hòm Healthy & Clean",
+    "description": "Eat clean, giữ dáng, giảm mỡ tăng cơ: ức gà luộc, salad cá hồi, poke bowl tươi mát.",
+    "icon": "🥗",
+    "badge_color": "#10b981"
+  }
+]

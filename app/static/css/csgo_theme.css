@@ -1,0 +1,237 @@
+/* ===================================================
+   CS:GO LUNCH CASE OPENER - DARK GAMING THEME
+   =================================================== */
+
+:root {
+  --cs-bg-main: #0e1217;
+  --cs-bg-card: #161c24;
+  --cs-bg-card-hover: #1f2733;
+  --cs-bg-panel: #13171e;
+  --cs-border: #283344;
+  
+  /* CS:GO Rarity Colors */
+  --rarity-milspec: #4b69ff;
+  --rarity-restricted: #8847ff;
+  --rarity-classified: #d32ce6;
+  --rarity-covert: #eb4b4b;
+  --rarity-gold: #ffd700;
+
+  /* StatTrak Color */
+  --cs-stattrak: #cf6a32;
+  
+  /* CS:GO Green Button */
+  --cs-green-btn: #5c8e32;
+  --cs-green-hover: #6ea83c;
+  --cs-green-active: #4a7527;
+}
+
+body {
+  background-color: var(--cs-bg-main);
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(30, 41, 59, 0.4) 0%, transparent 60%),
+    linear-gradient(rgba(14, 18, 23, 0.85), rgba(14, 18, 23, 0.95)),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px);
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* CS:GO Gaming Fonts & Headlines */
+.font-gaming {
+  font-family: 'Stratum2', 'Impact', -apple-system, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Rarity Glow and Border Styles */
+.border-milspec { border-color: var(--rarity-milspec); }
+.border-restricted { border-color: var(--rarity-restricted); }
+.border-classified { border-color: var(--rarity-classified); }
+.border-covert { border-color: var(--rarity-covert); }
+.border-gold { border-color: var(--rarity-gold); }
+
+.text-milspec { color: var(--rarity-milspec); }
+.text-restricted { color: var(--rarity-restricted); }
+.text-classified { color: var(--rarity-classified); }
+.text-covert { color: var(--rarity-covert); }
+.text-gold { color: var(--rarity-gold); }
+.text-stattrak { color: var(--cs-stattrak); }
+
+.bg-milspec { background-color: var(--rarity-milspec); }
+.bg-restricted { background-color: var(--rarity-restricted); }
+.bg-classified { background-color: var(--rarity-classified); }
+.bg-covert { background-color: var(--rarity-covert); }
+.bg-gold { background-color: var(--rarity-gold); }
+
+/* Glow Effects */
+.glow-milspec { box-shadow: 0 0 20px rgba(75, 105, 255, 0.4); }
+.glow-restricted { box-shadow: 0 0 22px rgba(136, 71, 255, 0.45); }
+.glow-classified { box-shadow: 0 0 25px rgba(211, 44, 230, 0.5); }
+.glow-covert { box-shadow: 0 0 30px rgba(235, 75, 75, 0.6); }
+.glow-gold { box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
+
+/* Roulette Box & Carousel */
+.roulette-container {
+  position: relative;
+  overflow: hidden;
+  background: #11151c;
+  border: 2px solid #232c3d;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Center Indicator Needle */
+.roulette-needle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: linear-gradient(180deg, #ff4444 0%, #ffbb33 50%, #ff4444 100%);
+  z-index: 30;
+  box-shadow: 0 0 12px #ff4444, 0 0 24px rgba(255, 68, 68, 0.6);
+  pointer-events: none;
+}
+.roulette-needle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ff4444;
+}
+.roulette-needle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #ff4444;
+}
+
+/* Card in Roulette Strip */
+.roulette-card {
+  width: 200px;
+  height: 250px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #18202c 0%, #101620 100%);
+  border: 1px solid #232e40;
+  border-bottom: 5px solid #4b69ff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+}
+
+/* Shadow Vignette on Roulette Sides */
+.roulette-vignette-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 140px;
+  background: linear-gradient(90deg, #11151c 20%, transparent 100%);
+  z-index: 20;
+  pointer-events: none;
+}
+.roulette-vignette-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  background: linear-gradient(270deg, #11151c 20%, transparent 100%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* CS:GO Open Button */
+.btn-csgo {
+  background: linear-gradient(180deg, #5c8e32 0%, #446e22 100%);
+  border: 1px solid #7cb942;
+  box-shadow: 0 4px 15px rgba(92, 142, 50, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+}
+.btn-csgo:hover:not(:disabled) {
+  background: linear-gradient(180deg, #6ea83c 0%, #4d7c27 100%);
+  box-shadow: 0 6px 20px rgba(110, 168, 60, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+.btn-csgo:active:not(:disabled) {
+  background: linear-gradient(180deg, #446e22 0%, #35561a 100%);
+  transform: translateY(1px);
+}
+.btn-csgo:disabled {
+  background: #374151;
+  border-color: #4b5563;
+  color: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Winner Modal Item Card 3D shine */
+.winner-card-3d {
+  background: linear-gradient(145deg, #1c2430 0%, #121822 100%);
+  position: relative;
+  overflow: hidden;
+}
+.winner-card-3d::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  animation: cardShine 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes cardShine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  30%, 100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Pulsing Gold Glow */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
+  50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.95); }
+}
+.pulse-gold {
+  animation: goldPulse 2s infinite ease-in-out;
+}

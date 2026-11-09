@@ -1,0 +1,36 @@
+[
+  {
+    "id": "40214e14",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "pho-bo-tai-lan",
+    "item_name": "Phở Bò Tái Lăn",
+    "rarity": "restricted",
+    "rarity_name": "Món Hơi Ngon (Restricted)",
+    "color": "#8847ff",
+    "image": "🍲",
+    "price_range": "50.000đ - 70.000đ",
+    "wear": "Field-Tested (Đầy đủ rau dưa gia vị)",
+    "float_value": 0.1517,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 16:51:09"
+  },
+  {
+    "id": "6aa0b77e",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "com-binh-dan",
+    "item_name": "Cơm Bình Dân 4 Món",
+    "rarity": "milspec",
+    "rarity_name": "Món Quốc Dân (Mil-Spec)",
+    "color": "#4b69ff",
+    "image": "🍛",
+    "price_range": "30.000đ - 40.000đ",
+    "wear": "Battle-Scarred (Ship trễ 30p, nguội ngắt)",
+    "float_value": 0.7279,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 16:51:19"
+  }
+]

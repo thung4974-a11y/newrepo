@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Hợp Đồng Trade-Up Nâng Cấp Món - CS:GO Lunch{% endblock %}
+
+{% block content %}
+<div id="tradeup-container" class="space-y-8 max-w-5xl mx-auto">
+
+  <!-- Header -->
+  <div class="text-center space-y-2">
+    <div class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+      📜 CS:GO TRADE-UP CONTRACT
+    </div>
+    <h1 class="text-3xl font-extrabold text-white font-gaming tracking-wide">
+      Hợp Đồng Nâng Cấp Món Ăn
+    </h1>
+    <p class="text-sm text-slate-400 max-w-xl mx-auto">
+      Hôm nay không muốn ăn món thường? Hãy gom <b>5 món cùng độ hiếm</b> để ký hợp đồng đổi lấy <b>1 món ăn cấp bậc cao hơn</b>!
+    </p>
+  </div>
+
+  <!-- Contract Board / 5 Slots -->
+  <div class="bg-[#141a24] border-2 border-slate-700/80 rounded-2xl p-6 shadow-2xl relative">
+    <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-3">
+      <div class="font-bold text-sm text-slate-200 font-gaming">
+        Bàn Ký Hợp Đồng (Đã chọn: <span id="slot-counter">0</span>/5 món)
+      </div>
+      <div class="text-xs text-slate-400 font-mono">
+        Quy tắc: 5 món cùng màu ➡️ 1 món cấp trên
+      </div>
+    </div>
+
+    <!-- 5 Selected Item Slots -->
+    <div id="selected-slots" class="grid grid-cols-2 sm:grid-cols-5 gap-3.5 h-36">
+      <div class="tradeup-slot h-full"></div>
+      <div class="tradeup-slot h-full"></div>
+      <div class="tradeup-slot h-full"></div>
+      <div class="tradeup-slot h-full"></div>
+      <div class="tradeup-slot h-full"></div>
+    </div>
+
+    <!-- Sign Button -->
+    <div class="mt-6 flex justify-center">
+      <button id="btn-sign-contract" disabled class="btn-csgo px-10 py-3.5 rounded-xl font-gaming text-sm tracking-wider opacity-50 cursor-not-allowed">
+        ✍️ KÝ HỢP ĐỒNG NÂNG CẤP (TRADE-UP)
+      </button>
+    </div>
+  </div>
+
+  <!-- Available Foods to Choose From -->
+  <div class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h2 class="text-base font-bold text-slate-200 uppercase font-gaming">
+        Chọn Món Đưa Vào Hợp Đồng
+      </h2>
+      <span class="text-xs text-slate-400 font-mono">Bấm vào món để thêm vào ô trống</span>
+    </div>
+
+    <!-- Rarity filter tabs -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
+      {% for item in foods %}
+        {% if item.rarity != 'gold' %}
+          {% set meta = rarity_meta[item.rarity] %}
+          <div onclick='selectTradeupItem({{ item|tojson }})'
+               class="bg-slate-900 border border-slate-800 hover:border-slate-500 rounded-lg p-3 flex flex-col justify-between cursor-pointer transition hover:-translate-y-1 group">
+            <div class="flex justify-between items-center text-[10px]">
+              <span class="font-bold text-{{ item.rarity }}">{{ meta.name.split('(')[0] }}</span>
+              <span class="text-slate-400 font-mono">{{ item.price_range }}</span>
+            </div>
+            <div class="text-center py-2">
+              <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">{{ item.image }}</div>
+              <div class="font-bold text-xs text-slate-100 group-hover:text-amber-400 truncate">{{ item.name }}</div>
+            </div>
+            <div class="text-[10px] text-center text-slate-400 bg-slate-800/80 rounded py-0.5 font-mono">
+              + Thêm vào hợp đồng
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+<!-- Trade-Up Success Modal -->
+<div id="tradeup-result-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+  <div class="winner-card-3d max-w-md w-full rounded-2xl p-6 border-2 border-amber-500 shadow-2xl text-center">
+    <div class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 mb-3">
+      ✨ HỢP ĐỒNG KÝ THÀNH CÔNG!
+    </div>
+    
+    <div id="tu-result-image" class="text-7xl my-4">🍲</div>
+    <h3 id="tu-result-name" class="text-2xl font-extrabold text-white font-gaming mb-1">Tên Món Mới</h3>
+    
+    <div class="flex items-center justify-center gap-3 my-2 text-sm font-bold">
+      <span id="tu-result-rarity">Cấp Bậc Mới</span>
+      <span class="text-slate-600">•</span>
+      <span id="tu-result-price" class="text-emerald-400 font-mono">100.000đ</span>
+    </div>
+
+    <p id="tu-result-desc" class="text-xs text-slate-300 my-4 italic px-4">
+      Mô tả món ăn mới nâng cấp...
+    </p>
+
+    <div class="mt-6 flex gap-3">
+      <a href="/" class="flex-1 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase transition flex items-center justify-center">
+        Quay lại Mở Hòm
+      </a>
+      <button onclick="document.getElementById('tradeup-result-modal').classList.add('hidden')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-xs">
+        Đóng
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

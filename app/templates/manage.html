@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Quản Lý Danh Sách Món Ăn - CS:GO Lunch{% endblock %}
+
+{% block content %}
+<div class="space-y-8 max-w-6xl mx-auto">
+
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+    <div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white font-gaming tracking-wide">
+        ⚙️ Quản Lý Món Ăn Trong Hòm
+      </h1>
+      <p class="text-xs text-slate-400 mt-1 font-mono">
+        Tự do thêm món mới của quán quen văn phòng, chỉnh sửa hoặc xoá món ăn.
+      </p>
+    </div>
+    <button onclick="document.getElementById('add-modal').classList.remove('hidden')" class="btn-csgo px-4 py-2 rounded-lg text-xs font-gaming flex items-center gap-2">
+      <span>➕</span> Thêm Món Ăn Mới
+    </button>
+  </div>
+
+  <!-- Search & Filter Bar -->
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-900 p-3 rounded-lg border border-slate-800">
+    <div class="w-full sm:w-72">
+      <input type="text" id="food-search" placeholder="🔍 Tìm kiếm món ăn..." class="w-full px-3 py-1.5 bg-slate-950 border border-slate-700 rounded text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-500">
+    </div>
+    <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+      <span>Tổng số: <b class="text-amber-400" id="total-count">{{ foods|length }}</b> món</span>
+    </div>
+  </div>
+
+  <!-- Foods Table / Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="foods-grid">
+    {% for item in foods %}
+      {% set meta = rarity_meta[item.rarity] %}
+      <div class="food-item-card bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col justify-between group hover:border-slate-600 transition shadow-lg relative overflow-hidden" data-name="{{ item.name|lower }}">
+        <div class="h-1 absolute top-0 left-0 right-0 bg-{{ item.rarity }}"></div>
+
+        <div>
+          <div class="flex items-center justify-between text-xs mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-slate-300">
+              {{ item.category }}
+            </span>
+            <span class="text-xs font-bold text-{{ item.rarity }}">
+              {{ meta.name.split('(')[0] }}
+            </span>
+          </div>
+
+          <div class="flex items-start gap-3 my-2">
+            <div class="text-4xl select-none group-hover:scale-110 transition-transform">
+              {{ item.image }}
+            </div>
+            <div>
+              <div class="font-bold text-sm text-slate-100">{{ item.name }}</div>
+              <div class="text-xs text-emerald-400 font-mono mt-0.5">{{ item.price_range }}</div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 italic line-clamp-2 mt-2">
+            "{{ item.description }}"
+          </p>
+        </div>
+
+        <div class="pt-3 mt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+          <div class="text-[10px] text-slate-500 truncate max-w-[170px]">
+            Hòm: {{ item.cases|join(', ') }}
+          </div>
+          <button onclick="deleteFood('{{ item.id }}', '{{ item.name }}')" class="text-red-400 hover:text-red-300 hover:underline">
+            Xoá
+          </button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Modal Thêm Món Ăn Mới -->
+<div id="add-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-slate-900 border-2 border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+    <div class="flex justify-between items-center pb-3 border-b border-slate-800">
+      <h3 class="text-lg font-bold font-gaming text-slate-100">➕ Thêm Món Ăn Mới</h3>
+      <button onclick="document.getElementById('add-modal').classList.add('hidden')" class="text-slate-400 hover:text-white text-xl">✕</button>
+    </div>
+
+    <form id="add-food-form" class="space-y-4 mt-4 text-xs font-mono">
+      <div>
+        <label class="block text-slate-300 mb-1">Tên Món Ăn *</label>
+        <input type="text" id="add-name" required placeholder="VD: Bún Chả Nướng Than" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-slate-300 mb-1">Cấp Độ Hiếm (Rarity) *</label>
+          <select id="add-rarity" required class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500">
+            {% for r in rarities %}
+              <option value="{{ r.value }}">{{ rarity_meta[r].name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label class="block text-slate-300 mb-1">Icon / Emoji *</label>
+          <input type="text" id="add-image" required value="🍲" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-slate-300 mb-1">Khoảng Giá *</label>
+          <input type="text" id="add-price" required placeholder="VD: 40.000đ - 55.000đ" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label class="block text-slate-300 mb-1">Phân Loại</label>
+          <input type="text" id="add-category" value="Cơm / Bún" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-slate-300 mb-1">Mô Tả / Flavor Text Hài Hước</label>
+        <textarea id="add-desc" rows="2" placeholder="VD: Nước mắm ấm nóng, chả băm thơm phức quạt than hoa..." class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-amber-500"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-slate-300 mb-1.5">Xuất Hiện Trong Các Hòm:</label>
+        <div class="grid grid-cols-2 gap-2 text-[11px]">
+          {% for c in cases %}
+            <label class="flex items-center gap-2 bg-slate-950 p-2 rounded border border-slate-800 cursor-pointer">
+              <input type="checkbox" name="cases" value="{{ c.id }}" checked class="accent-amber-500">
+              <span>{{ c.icon }} {{ c.name }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800 flex justify-end gap-2">
+        <button type="button" onclick="document.getElementById('add-modal').classList.add('hidden')" class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700">Huỷ</button>
+        <button type="submit" class="btn-csgo px-6 py-2 rounded font-bold font-gaming">Lưu Món Mới</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Search filter
+  const searchInput = document.getElementById('food-search');
+  const cards = document.querySelectorAll('.food-item-card');
+  const totalCountEl = document.getElementById('total-count');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        if (name.includes(q)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      totalCountEl.innerText = visible;
+    });
+  }
+
+  // Delete food
+  async function deleteFood(id, name) {
+    if (!confirm(`Bạn có chắc muốn xoá "${name}" khỏi danh sách?`)) return;
+    try {
+      const res = await fetch(`/api/foods/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        window.location.reload();
+      } else {
+        alert('Lỗi khi xoá món');
+      }
+    } catch (err) {
+      alert('Lỗi: ' + err.message);
+    }
+  }
+
+  // Add food form submit
+  const addForm = document.getElementById('add-food-form');
+  if (addForm) {
+    addForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const checkedCases = Array.from(document.querySelectorAll('input[name="cases"]:checked')).map(cb => cb.value);
+      if (checkedCases.length === 0) {
+        alert('Vui lòng chọn ít nhất 1 hòm!');
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById('add-name').value.trim(),
+        rarity: document.getElementById('add-rarity').value,
+        price_range: document.getElementById('add-price').value.trim(),
+        image: document.getElementById('add-image').value.trim() || '🍲',
+        category: document.getElementById('add-category').value.trim() || 'Món ăn',
+        description: document.getElementById('add-desc').value.trim() || 'Món ăn thơm ngon tuyệt hảo.',
+        cases: checkedCases
+      };
+
+      try {
+        const res = await fetch('/api/foods', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          window.location.reload();
+        } else {
+          alert('Lỗi khi thêm món mới');
+        }
+      } catch (err) {
+        alert('Lỗi: ' + err.message);
+      }
+    });
+  }
+</script>
+{% endblock %}

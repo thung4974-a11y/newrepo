@@ -1,0 +1,262 @@
+[
+  {
+    "id": "banh-mi-pate",
+    "name": "Bánh Mì Chả Pate",
+    "rarity": "milspec",
+    "price_range": "20.000đ - 30.000đ",
+    "cases": ["van-phong", "chay-tui"],
+    "image": "🥖",
+    "description": "Vỏ giòn rụm, pate béo ngậy quện với rau mùi và chút ớt cay nồng. Cứu cánh quốc dân số 1 lúc 12h trưa.",
+    "category": "Ăn nhanh"
+  },
+  {
+    "id": "com-binh-dan",
+    "name": "Cơm Bình Dân 4 Món",
+    "rarity": "milspec",
+    "price_range": "30.000đ - 40.000đ",
+    "cases": ["van-phong", "chay-tui"],
+    "image": "🍛",
+    "description": "Thịt kho tàu, đậu phụ nhồi thịt, rau muống xào tỏi và bát canh chua miễn phí. Càng ăn càng nhớ nhà.",
+    "category": "Cơm"
+  },
+  {
+    "id": "mi-tom-trung",
+    "name": "Mì Tôm Trứng Chần",
+    "rarity": "milspec",
+    "price_range": "15.000đ - 25.000đ",
+    "cases": ["chay-tui"],
+    "image": "🍜",
+    "description": "Gói Hảo Hảo chua cay kèm quả trứng lòng đào béo ngậy, rắc thêm chút hành lá. Món ăn của những ngày nghèo nhưng vui.",
+    "category": "Ăn nhanh"
+  },
+  {
+    "id": "xoi-xeo-ruoc",
+    "name": "Xôi Xéo Ruốc Hành Phi",
+    "rarity": "milspec",
+    "price_range": "20.000đ - 30.000đ",
+    "cases": ["van-phong", "chay-tui"],
+    "image": "🍙",
+    "description": "Hạt xôi vàng óng đẫm mỡ gà, đậu xanh thái mỏng bùi bùi và hành phi giòn tan nức mũi.",
+    "category": "Xôi"
+  },
+  {
+    "id": "bun-dau-mam-tom",
+    "name": "Bún Đậu Mắm Tôm",
+    "rarity": "milspec",
+    "price_range": "35.000đ - 50.000đ",
+    "cases": ["van-phong"],
+    "image": "🥢",
+    "description": "Đậu mơ rán giòn vỏ mềm ruột, chả cốm dẻo thơm, đánh bông bát mắm tôm sủi bọt quất ớt. Cẩn thận mùi thơm lây cả công ty!",
+    "category": "Bún / Phở"
+  },
+  {
+    "id": "com-rang-dua-bo",
+    "name": "Cơm Rang Dưa Bò",
+    "rarity": "milspec",
+    "price_range": "40.000đ - 50.000đ",
+    "cases": ["van-phong"],
+    "image": "🍳",
+    "description": "Hạt cơm săn bóng giòn giòn, thịt bò xào mềm ngọt quện vị chua dòn của dưa cải muối chua đúng điệu.",
+    "category": "Cơm"
+  },
+  {
+    "id": "banh-cuon-nong",
+    "name": "Bánh Cuốn Nóng Chả Quế",
+    "rarity": "milspec",
+    "price_range": "30.000đ - 45.000đ",
+    "cases": ["van-phong", "chay-tui"],
+    "image": "🥟",
+    "description": "Bánh tráng mỏng tang cuộn mộc nhĩ thịt băm, chấm nước mắm cà cuống ấm nóng thơm lừng chả quế.",
+    "category": "Ăn nhẹ"
+  },
+  {
+    "id": "salad-uc-ga",
+    "name": "Salad Ức Gà Áp Chảo",
+    "rarity": "milspec",
+    "price_range": "45.000đ - 60.000đ",
+    "cases": ["healthy", "van-phong"],
+    "image": "🥗",
+    "description": "Ức gà mềm ướp tiêu đen áp chảo, xà lách romaine giòn ngọt cùng sốt mè rang bùi béo healthy.",
+    "category": "Healthy"
+  },
+  {
+    "id": "chao-yen-mach",
+    "name": "Cháo Yến Mạch Trứng Thịt Băm",
+    "rarity": "milspec",
+    "price_range": "30.000đ - 40.000đ",
+    "cases": ["healthy", "chay-tui"],
+    "image": "🥣",
+    "description": "Thơm ngon dễ tiêu, lượng calo thấp nhưng giàu chất xơ giúp buổi chiều tỉnh táo không bị ngáp ngủ.",
+    "category": "Healthy"
+  },
+  {
+    "id": "pho-bo-tai-lan",
+    "name": "Phở Bò Tái Lăn",
+    "rarity": "restricted",
+    "price_range": "50.000đ - 70.000đ",
+    "cases": ["van-phong"],
+    "image": "🍲",
+    "description": "Thịt bò xào lăn lửa lớn dậy mùi tỏi, nước dùng béo ngậy ngọt lịm từ xương hầm, ngập tràn hành hoa và rau thơm.",
+    "category": "Bún / Phở"
+  },
+  {
+    "id": "com-tam-suon-bi-cha",
+    "name": "Cơm Tấm Sườn Bì Chả Ốp La",
+    "rarity": "restricted",
+    "price_range": "50.000đ - 65.000đ",
+    "cases": ["van-phong"],
+    "image": "🍖",
+    "description": "Miếng sườn cốt lết nướng than hoa thơm lừng mỡ óng ánh, chả trứng nướng bùi béo và chén nước mắm kẹo ớt tỏi.",
+    "category": "Cơm"
+  },
+  {
+    "id": "bun-cha-ha-noi",
+    "name": "Bún Chả Hà Nội Nướng Than",
+    "rarity": "restricted",
+    "price_range": "45.000đ - 60.000đ",
+    "cases": ["van-phong"],
+    "image": "🥓",
+    "description": "Chả miếng ba chỉ xém cạnh và chả viên nướng quạt tay thơm phức ngập trong bát nước chấm ấm nóng đu đủ chua ngọt.",
+    "category": "Bún / Phở"
+  },
+  {
+    "id": "ga-ran-han-quoc",
+    "name": "Gà Rán Giòn Sốt Cay Ngọt",
+    "rarity": "restricted",
+    "price_range": "60.000đ - 80.000đ",
+    "cases": ["van-phong", "dai-gia"],
+    "image": "🍗",
+    "description": "Lớp vỏ bột chiên xù rồm rộp, đẫm sốt cay ngọt Gochujang rắc mè trắng kèm củ cải muối giòn chua giải ngấy.",
+    "category": "Gà rán"
+  },
+  {
+    "id": "bun-bo-hue",
+    "name": "Bún Bò Huế Chả Cua Tiết Luộc",
+    "rarity": "restricted",
+    "price_range": "50.000đ - 70.000đ",
+    "cases": ["van-phong"],
+    "image": "🍜",
+    "description": "Sợi bún to tròn trong nước dùng cay nồng hương sả và mắm ruốc, miếng bắp bò hoa giòn sần sật và chả cua thơm ngọt.",
+    "category": "Bún / Phở"
+  },
+  {
+    "id": "poke-ca-ngu",
+    "name": "Poke Bowl Cá Ngừ Bơ Tươi",
+    "rarity": "restricted",
+    "price_range": "75.000đ - 95.000đ",
+    "cases": ["healthy"],
+    "image": "🥑",
+    "description": "Cá ngừ tươi đại dương ướp dầu mè xì dầu, bơ quả béo ngậy, đậu nành edamame trên nền cơm gạo lứt dẻo thơm.",
+    "category": "Healthy"
+  },
+  {
+    "id": "pizza-hai-san",
+    "name": "Pizza Hải Sản Phô Mai Viền Tươi",
+    "rarity": "classified",
+    "price_range": "120.000đ - 180.000đ",
+    "cases": ["van-phong", "dai-gia"],
+    "image": "🍕",
+    "description": "Tôm tươi, mực giòn cùng ớt chuông ngập trong lớp phô mai Mozzarella kéo sợi vô tận. Bữa trưa ăn mừng cùng team!",
+    "category": "Âu / Fastfood"
+  },
+  {
+    "id": "dimsum-quang-dong",
+    "name": "Xửng Dimsum Quảng Đông 6 Vị",
+    "rarity": "classified",
+    "price_range": "110.000đ - 160.000đ",
+    "cases": ["van-phong", "dai-gia"],
+    "image": "🥟",
+    "description": "Há cảo tôm pha lê vỏ trong suốt lộ màu tôm hồng, xíu mại trứng muối đậm đà và bánh bao kim sa tan chảy.",
+    "category": "Hoa"
+  },
+  {
+    "id": "ramen-nhat-ban",
+    "name": "Mì Ramen Tonkotsu Thịt Chashu",
+    "rarity": "classified",
+    "price_range": "110.000đ - 150.000đ",
+    "cases": ["van-phong", "dai-gia"],
+    "image": "🍜",
+    "description": "Nước cốt xương heo hầm đặc sệt 12 tiếng béo ngậy, sợi mì tươi xoăn dai cùng miếng thịt chashu khò lửa thơm nức mũi.",
+    "category": "Nhật"
+  },
+  {
+    "id": "salad-ca-hoi-ap-chao",
+    "name": "Salad Cá Hồi Na Uy Áp Chảo",
+    "rarity": "classified",
+    "price_range": "120.000đ - 160.000đ",
+    "cases": ["healthy", "dai-gia"],
+    "image": "🐟",
+    "description": "Miếng cá hồi Na Uy áp chảo giòn da ngọt thịt mọng nước, sốt chanh leo chua thanh và rau mầm tươi xanh mát.",
+    "category": "Healthy"
+  },
+  {
+    "id": "com-nieu-singapore",
+    "name": "Cơm Niêu Bò Sốt Tiêu Singapore",
+    "rarity": "classified",
+    "price_range": "95.000đ - 140.000đ",
+    "cases": ["van-phong", "dai-gia"],
+    "image": "🥘",
+    "description": "Cơm cháy giòn rụm đáy niêu đất xèo xèo, thịt bò mềm sốt tiêu đen sôi sùng sục rưới đều lên mặt cơm.",
+    "category": "Cơm"
+  },
+  {
+    "id": "bo-bit-tet-wagyu",
+    "name": "Bò Bít Tết (Steak) Thăn Nội Sốt Truffle",
+    "rarity": "covert",
+    "price_range": "250.000đ - 450.000đ",
+    "cases": ["dai-gia", "van-phong"],
+    "image": "🥩",
+    "description": "Thịt bò vân mỡ cẩm thạch nướng Medium-Rare tan chảy trong miệng, quyện cùng sốt nấm Truffle đen quý tộc và khoai tây nghiền bơ tỏi.",
+    "category": "Âu"
+  },
+  {
+    "id": "buffet-haidilao",
+    "name": "Lẩu Haidilao Múa Mì Thả Ga",
+    "rarity": "covert",
+    "price_range": "300.000đ - 500.000đ",
+    "cases": ["dai-gia"],
+    "image": "🍲",
+    "description": "Nước lẩu cà chua trứ danh kết hợp lẩu cay Mala Tứ Xuyên, thịt bò Mỹ nhúng tái và màn múa mì tung lụa điệu nghệ ngay trước bàn.",
+    "category": "Lẩu"
+  },
+  {
+    "id": "sashimi-thuong-hang",
+    "name": "Thuyền Sashimi Thượng Hạng Omakase",
+    "rarity": "covert",
+    "price_range": "350.000đ - 600.000đ",
+    "cases": ["dai-gia"],
+    "image": "🍣",
+    "description": "Cá hồi béo ngậy, cá ngừ Akami đỏ thẫm, sò đỏ Nhật giòn sần sật đặt trên đá tuyết lạnh buốt chấm mù tạt Wasabi tươi.",
+    "category": "Nhật"
+  },
+  {
+    "id": "gold-sep-bao",
+    "name": "★ Sếp / Đồng Nghiệp Khao Trưa Nay!",
+    "rarity": "gold",
+    "price_range": "0đ (Miễn phí 100%)",
+    "cases": ["van-phong", "chay-tui", "dai-gia", "healthy"],
+    "image": "👑",
+    "description": "VẬN MAY CỰC ĐẠI! Bạn không cần rút ví 1 xu. Hãy chạy lại vỗ vai sếp hoặc đồng nghiệp thân thiết và chìa màn hình này ra đòi khao!",
+    "category": "Đặc biệt"
+  },
+  {
+    "id": "gold-dao-troll",
+    "name": "★ Dao Karambit: Uống Trà Sữa Nhịn Cơm!",
+    "rarity": "gold",
+    "price_range": "50.000đ - 70.000đ",
+    "cases": ["van-phong", "chay-tui", "dai-gia", "healthy"],
+    "image": "🧋",
+    "description": "MỘT NHÁT CHÉM TÂM HỒN: Trưa nay bỏ cơm, gọi 1 ly Trà Sữa Oolong Nướng 100% đường 100% đá full trân châu đen thạch phô mai thay bữa trưa!",
+    "category": "Đặc biệt"
+  },
+  {
+    "id": "gold-buffet-king",
+    "name": "★ Tự Do Chọn Bất Kỳ Món Đắt Nhất!",
+    "rarity": "gold",
+    "price_range": "Vô cực",
+    "cases": ["van-phong", "chay-tui", "dai-gia", "healthy"],
+    "image": "✨",
+    "description": "THẺ QUYỀN LỰC VÀNG: Bạn có toàn quyền chọn bất cứ món gì thèm nhất trên đời mà không cần quan tâm đến giá tiền hay calo!",
+    "category": "Đặc biệt"
+  }
+]
