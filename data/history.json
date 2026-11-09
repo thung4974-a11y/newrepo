@@ -66,5 +66,39 @@
     "is_stattrak": false,
     "stattrak_count": 0,
     "opened_at": "2026-11-09 16:54:45"
+  },
+  {
+    "id": "cd8b83ab",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "ga-ran-han-quoc",
+    "item_name": "Gà Rán Giòn Sốt Cay Ngọt",
+    "rarity": "restricted",
+    "rarity_name": "Món Hơi Ngon (Restricted)",
+    "color": "#8847ff",
+    "image": "🍗",
+    "price_range": "60.000đ - 80.000đ",
+    "wear": "Field-Tested (Đầy đủ rau dưa gia vị)",
+    "float_value": 0.2297,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 16:58:04"
+  },
+  {
+    "id": "1a8997c0",
+    "case_id": "van-phong",
+    "case_name": "Hòm Cơm Văn Phòng",
+    "item_id": "bun-dau-mam-tom",
+    "item_name": "Bún Đậu Mắm Tôm",
+    "rarity": "milspec",
+    "rarity_name": "Món Quốc Dân (Mil-Spec)",
+    "color": "#4b69ff",
+    "image": "🥢",
+    "price_range": "35.000đ - 50.000đ",
+    "wear": "Battle-Scarred (Ship trễ 30p, nguội ngắt)",
+    "float_value": 0.6028,
+    "is_stattrak": false,
+    "stattrak_count": 0,
+    "opened_at": "2026-11-09 17:02:12"
   }
 ]
